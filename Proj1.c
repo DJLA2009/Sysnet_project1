@@ -26,8 +26,8 @@ char* read()//will read input from user
 			printf("Entry too long\nEverything after the 256th character will not be recorded.\n");
 			break; //this limits the length of the string	
 		}
-		c = getc(stdin);// read the input from keyboard standard input		
-		entry = (char*)realloc(entry, j * sizeof(char));// re-allocate memory for character read to be stored
+	c = getc(stdin);// read the input from keyboard standard input		
+	entry = (char*)realloc(entry, j * sizeof(char));// re-allocate memory for character read to be stored
    	entry[i] = c;// store read character by making pointer point to c
  	i++;
     	j++;
