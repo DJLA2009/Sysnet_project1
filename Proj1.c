@@ -71,14 +71,14 @@ Param_t* PARAMbuild()//builds a param struct
 
 int main(void)
 {
-	printf("Type input and hit ENTER ");
-	char *entry;
-	entry=read();
-	Param_t* param1;
-	param1=PARAMbuild();
-   argCount(entry,param1);
-   free(entry);
-   printf("%d", param1->argumentCount);
+     printf("Type input and hit ENTER ");
+     char *entry;
+     entry=read();
+     Param_t* param1;
+     param1=PARAMbuild();
+     argCount(entry,param1);
+     free(entry);
+     printf("%d", param1->argumentCount);
 }
 
 
