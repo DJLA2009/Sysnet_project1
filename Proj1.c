@@ -29,7 +29,7 @@ char* read()//will read input from user
 		c = getc(stdin);// read the input from keyboard standard input		
 		entry = (char*)realloc(entry, j * sizeof(char));// re-allocate memory for character read to be stored
    	entry[i] = c;// store read character by making pointer point to c
- 		i++;
+ 	i++;
     	j++;
 	}
 	entry[i]='\0';
