@@ -69,6 +69,35 @@ Param_t* PARAMbuild()//builds a param struct
    return new;
 }
 
+int argCreator(char *c,Param_t* p)
+{
+   //p->argumentVector = malloc(p->argumentCount * sizeof(char*));
+   int i=0; 
+   const char s[2] = " ";
+   char *token;
+   
+   /* get the first token */
+   token = strtok(c, s);
+   
+   /* walk through other tokens */
+   while( token != NULL ) 
+   {
+      printf( " %s\n", token );
+      if(token[0]!='>'||token[0]!='<')
+      {
+         //p->argumentVector[i]=(char*)malloc(sizeof(token)+1);
+         p->argumentVector[i]=token;
+         i++;
+      }
+      //else if (token[0]=='>')
+      //{
+        // p->outputRedirect=token;
+      //}
+      token = strtok(NULL, s);
+   }
+   return 0;
+}
+
 int main(void)
 {
 	printf("Type input and hit ENTER ");
