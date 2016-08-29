@@ -59,6 +59,33 @@ void argCount(char *c, Param_t* p)//this counts the # of args in string so the m
    }
 }
 
+int argCreator(char *c,Param_t* p)
+{
+   int i=0; 
+   const char s[2] = " ";
+   char *token;
+   
+   /* get the first token */
+   token = strtok(c, " \n\t");
+   
+   /* walk through other tokens */
+   while( token != NULL ) 
+   {
+      if(token[0]!='>'&&token[0]!='<')
+      {
+         p->argumentVector[i]=token;
+         printf( "%s\n", p->argumentVector[i] );
+         i++;
+      }
+      else if (token[0]=='>')
+      {
+         p->outputRedirect=token;
+      }
+      token = strtok(NULL, s);
+   }
+   return 0;
+}
+
 Param_t* PARAMbuild()//builds a param struct
 {
    Param_t* new;
